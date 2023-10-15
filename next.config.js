@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
 const path = require('path')
 
+const withPWA = require("@ducanh2912/next-pwa").default({
+  // Your other options,
+  dest: "public",
+});
+
+
 const nextConfig = {
   reactStrictMode: true,
   sassOptions: {
@@ -8,4 +14,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+module.exports = withPWA(nextConfig)
